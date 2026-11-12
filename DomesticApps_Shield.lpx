@@ -1,0 +1,36 @@
+#!name = 国产应用防检测（自制）
+#!desc = 给对代理敏感的国产应用做流量层伪装：TUN 层跳过代理 + 返回真实 IP + 敏感应用免 MitM 解密 + 全部直连。银行类已由 BankDirect 插件专门覆盖，本插件不重复；红果/番茄/抖音故意不收——它们靠 MitM 插件去广告，排除解密会把广告放回来。
+#!author = Muse
+
+[General]
+skip-proxy = %APPEND% *.alipay.com, *.alipayobjects.com, *.tenpay.com, *.unionpay.com, *.95516.com, *.122.gov.cn, *.10086.cn, *.cmcc.com, *.189.cn, *.weixin.qq.com, *.wechat.com, *.qq.com, *.taobao.com, *.tmall.com, *.goofish.com, *.pinduoduo.com, *.yangkeduo.com, *.meituan.com, *.dianping.com, *.dewu.com, *.poizon.com, *.weibo.com, *.sinaimg.cn, *.xiaohongshu.com
+always-real-ip = %APPEND% *.alipay.com, *.alipayobjects.com, *.tenpay.com, *.unionpay.com, *.95516.com, *.122.gov.cn, *.10086.cn, *.cmcc.com, *.189.cn, *.weixin.qq.com, *.wechat.com, *.qq.com, *.taobao.com, *.tmall.com, *.goofish.com, *.pinduoduo.com, *.yangkeduo.com, *.meituan.com, *.dianping.com, *.dewu.com, *.poizon.com, *.weibo.com, *.sinaimg.cn, *.xiaohongshu.com
+
+[Rule]
+DOMAIN-SUFFIX,alipay.com,DIRECT
+DOMAIN-SUFFIX,alipayobjects.com,DIRECT
+DOMAIN-SUFFIX,tenpay.com,DIRECT
+DOMAIN-SUFFIX,unionpay.com,DIRECT
+DOMAIN-SUFFIX,95516.com,DIRECT
+DOMAIN-SUFFIX,122.gov.cn,DIRECT
+DOMAIN-SUFFIX,10086.cn,DIRECT
+DOMAIN-SUFFIX,cmcc.com,DIRECT
+DOMAIN-SUFFIX,189.cn,DIRECT
+DOMAIN-SUFFIX,weixin.qq.com,DIRECT
+DOMAIN-SUFFIX,wechat.com,DIRECT
+DOMAIN-SUFFIX,qq.com,DIRECT
+DOMAIN-SUFFIX,taobao.com,DIRECT
+DOMAIN-SUFFIX,tmall.com,DIRECT
+DOMAIN-SUFFIX,goofish.com,DIRECT
+DOMAIN-SUFFIX,pinduoduo.com,DIRECT
+DOMAIN-SUFFIX,yangkeduo.com,DIRECT
+DOMAIN-SUFFIX,meituan.com,DIRECT
+DOMAIN-SUFFIX,dianping.com,DIRECT
+DOMAIN-SUFFIX,dewu.com,DIRECT
+DOMAIN-SUFFIX,poizon.com,DIRECT
+DOMAIN-SUFFIX,weibo.com,DIRECT
+DOMAIN-SUFFIX,sinaimg.cn,DIRECT
+DOMAIN-SUFFIX,xiaohongshu.com,DIRECT
+
+[MitM]
+hostname = %APPEND% -*.alipay.com, -*.alipayobjects.com, -*.tenpay.com, -*.unionpay.com, -*.95516.com, -*.122.gov.cn, -*.10086.cn, -*.cmcc.com, -*.189.cn
