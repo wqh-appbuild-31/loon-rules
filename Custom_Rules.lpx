@@ -1,0 +1,7 @@
+#!name = 自定规则（王启航）
+#!desc = 按王启航指令维护的零散规则合集；订阅一次，以后在 Loon 里点更新即可同步新规则。
+#!author = Muse
+
+[Rule]
+# 2026-11-15 农行检测：拦截农行安全检测上报域名（须排在 BankDirect 插件上面才生效）
+DOMAIN,msmp.abchina.com.cn,REJECT
