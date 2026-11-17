@@ -5,5 +5,3 @@
 [Rule]
 # 2026-11-15 农行检测：拦截农行安全检测上报域名（须排在 BankDirect 插件上面才生效）
 DOMAIN,msmp.abchina.com.cn,REJECT
-# 2026-11-17 LaunchShield：该 App 内置收集上传器，此规则掐断其上传服务器；去广告为本地功能不受影响
-DOMAIN,ls-collect.86419753.xyz,REJECT
