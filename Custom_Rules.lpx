@@ -5,3 +5,5 @@
 [Rule]
 # 2026-11-15 农行检测：拦截农行安全检测上报域名（须排在 BankDirect 插件上面才生效）
 DOMAIN,msmp.abchina.com.cn,REJECT
+# 2026-11-18 补回 AI2 原有规则：Google 钉死走美国后备（原稿在本地规则里，他在用配置里缺这一条）
+DOMAIN-SUFFIX,google.com,美国后备
