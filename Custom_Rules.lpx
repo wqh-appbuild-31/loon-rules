@@ -2,7 +2,15 @@
 #!desc = 按王启航指令维护的零散规则合集；订阅一次，以后在 Loon 里点更新即可同步新规则。
 #!author = Muse
 
+[General]
+# 2026-11-21 建行生活：它的代理探针域名是 yunbusiness.ccb.com（社区公认，VirgilClyne 通用模块名单）
+# 单独钉死跳过代理 + 真实 IP，不依赖 BankDirect 的版本（BankDirect 最新版已用 *.ccb.com 覆盖，此处做双保险）
+skip-proxy = %APPEND% yunbusiness.ccb.com
+always-real-ip = %APPEND% yunbusiness.ccb.com
+
 [Rule]
+# 2026-11-21 建行生活探针域名直连（与上面 [General] 配合）
+DOMAIN,yunbusiness.ccb.com,DIRECT
 # 2026-11-15 农行检测：拦截农行安全检测上报域名（须排在 BankDirect 插件上面才生效）
 DOMAIN,msmp.abchina.com.cn,REJECT
 # 2026-11-18 补回 AI2 原有规则：Google 钉死走美国后备（原稿在本地规则里，他在用配置里缺这一条）
